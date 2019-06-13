@@ -11,9 +11,9 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 
-def author_detail(request, author):
-    obj = get_object_or_404(Post, author__iexact=author)
-    return render(request, 'blog/detail_author.html', {'obj': obj})
+def title_detail(request, title):
+    post = get_object_or_404(Post, title__iexact=title)
+    return render(request, 'blog/detail_title.html', {'post': post})
 
 
 
